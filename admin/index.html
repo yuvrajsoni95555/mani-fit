@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MANI FIT — Central Administrative Console</title>
+    <link rel="stylesheet" href="admin.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="admin-wrapper">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+            <div class="brand">
+                <div class="brand-emblem">MF</div>
+                <div class="brand-text">
+                    <h2>MANI FIT</h2>
+                    <span>Admin Console</span>
+                </div>
+            </div>
+
+            <nav class="nav-menu">
+                <button class="nav-item active" data-tab="overview">
+                    <span class="icon">📊</span> Overview & Metrics
+                </button>
+                <button class="nav-item" data-tab="users">
+                    <span class="icon">👥</span> User Management
+                </button>
+                <button class="nav-item" data-tab="codes">
+                    <span class="icon">🔑</span> Special Unlock Codes
+                </button>
+                <button class="nav-item" data-tab="payments">
+                    <span class="icon">💳</span> Payment Transactions
+                </button>
+                <button class="nav-item" data-tab="content">
+                    <span class="icon">🥗</span> Content & Foods
+                </button>
+                <button class="nav-item" data-tab="audit">
+                    <span class="icon">🛡️</span> Security & Audit Logs
+                </button>
+            </nav>
+
+            <div class="sidebar-footer">
+                <div class="admin-profile">
+                    <div class="avatar">YS</div>
+                    <div class="info">
+                        <strong>Yuvraj Soni</strong>
+                        <span>Super Administrator</span>
+                    </div>
+                </div>
+                <button class="btn-logout" id="btnLogout">Sign Out</button>
+            </div>
+        </aside>
+
+        <!-- Main Workspace Area -->
+        <main class="main-content">
+            <header class="topbar">
+                <div class="topbar-left">
+                    <h1 id="pageTitle">Overview & Analytics</h1>
+                    <p class="subtitle">Authoritative system status & operational management</p>
+                </div>
+                <div class="topbar-right">
+                    <div class="badge status-live">
+                        <span class="pulse"></span> System Operational
+                    </div>
+                    <button class="btn-primary" id="btnQuickCreateCode">+ Create Promo Code</button>
+                </div>
+            </header>
+
+            <div class="content-body">
+                <!-- TAB 1: OVERVIEW -->
+                <section id="tab-overview" class="tab-pane active">
+                    <div class="metrics-grid">
+                        <div class="metric-card">
+                            <span class="label">Total Registered Users</span>
+                            <div class="value">2,840</div>
+                            <span class="delta positive">+14.2% this month</span>
+                        </div>
+                        <div class="metric-card">
+                            <span class="label">Active Premium VIPs</span>
+                            <div class="value">412</div>
+                            <span class="delta positive">₹100/mo Tier</span>
+                        </div>
+                        <div class="metric-card">
+                            <span class="label">Monthly Revenue (MRR)</span>
+                            <div class="value">₹41,200</div>
+                            <span class="delta neutral">Verified UPI & Google Play</span>
+                        </div>
+                        <div class="metric-card">
+                            <span class="label">Active Unlock Codes</span>
+                            <div class="value" id="statActiveCodes">4</div>
+                            <span class="delta neutral">Max redemptions tracked</span>
+                        </div>
+                    </div>
+
+                    <div class="card chart-card">
+                        <div class="card-header">
+                            <h3>Service Health & Integration Status</h3>
+                            <span class="tag">Live Telemetry</span>
+                        </div>
+                        <div class="service-health-grid">
+                            <div class="health-item">
+                                <div class="health-info">
+                                    <strong>Cloud Firestore Database</strong>
+                                    <span>Rules v2 active • Multi-region</span>
+                                </div>
+                                <span class="badge badge-success">HEALTHY</span>
+                            </div>
+                            <div class="health-item">
+                                <div class="health-info">
+                                    <strong>Cloud Functions Backend</strong>
+                                    <span>Atomic code redemption runtime</span>
+                                </div>
+                                <span class="badge badge-success">ONLINE</span>
+                            </div>
+                            <div class="health-item">
+                                <div class="health-info">
+                                    <strong>Gemini AI Fitness Coach API</strong>
+                                    <span>Quota: Generous free tier • Latency: 210ms</span>
+                                </div>
+                                <span class="badge badge-success">CONNECTED</span>
+                            </div>
+                            <div class="health-item">
+                                <div class="health-info">
+                                    <strong>Android Health Connect API</strong>
+                                    <span>Adapter readiness: v1.1 alpha client</span>
+                                </div>
+                                <span class="badge badge-info">READY</span>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- TAB 2: USER MANAGEMENT -->
+                <section id="tab-users" class="tab-pane">
+                    <div class="card">
+                        <div class="card-header">
+                            <h3>Registered User Accounts</h3>
+                            <input type="text" id="userSearch" class="search-input" placeholder="Search by name, email or UID...">
+                        </div>
+                        <div class="table-responsive">
+                            <table class="data-table" id="usersTable">
+                                <thead>
+                                    <tr>
+                                        <th>User</th>
+                                        <th>Biometrics</th>
+                                        <th>Goal</th>
+                                        <th>Subscription</th>
+                                        <th>Valid Until</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <!-- Populated via JS -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- TAB 3: SPECIAL UNLOCK CODES -->
+                <section id="tab-codes" class="tab-pane">
+                    <div class="card form-card">
+                        <div class="card-header">
+                            <h3>Create New Special Unlock Code</h3>
+                        </div>
+                        <form id="createCodeForm" class="grid-form">
+                            <div class="form-group">
+                                <label for="inputCode">Code Value (Uppercase)</label>
+                                <input type="text" id="inputCode" placeholder="e.g. MANIFIT-SUMMER-2026" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="selectEntitlement">Entitlement Type</label>
+                                <select id="selectEntitlement" required>
+                                    <option value="monthly_30d">Monthly Premium (30 Days)</option>
+                                    <option value="quarterly_90d">Quarterly Premium (90 Days)</option>
+                                    <option value="annual_365d">Annual Premium (365 Days)</option>
+                                    <option value="lifetime">Permanent Lifetime Access</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="inputMaxRedemptions">Max Allowable Uses</label>
+                                <input type="number" id="inputMaxRedemptions" min="1" max="1000" value="1" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="inputExpiry">Expiration Date</label>
+                                <input type="date" id="inputExpiry" required>
+                            </div>
+                            <div class="form-group full-width">
+                                <label for="inputNotes">Internal Note / Target Person</label>
+                                <input type="text" id="inputNotes" placeholder="e.g. VIP access granted for beta partner">
+                            </div>
+                            <div class="form-actions full-width">
+                                <button type="submit" class="btn-primary">Generate & Save Code</button>
+                            </div>
+                        </form>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-header">
+                            <h3>Active & Past Redemption Codes</h3>
+                        </div>
+                        <div class="table-responsive">
+                            <table class="data-table" id="codesTable">
+                                <thead>
+                                    <tr>
+                                        <th>Code</th>
+                                        <th>Entitlement</th>
+                                        <th>Redemptions</th>
+                                        <th>Expires</th>
+                                        <th>Status</th>
+                                        <th>Notes</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <!-- Populated via JS -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- TAB 4: PAYMENT TRANSACTIONS -->
+                <section id="tab-payments" class="tab-pane">
+                    <div class="card">
+                        <div class="card-header">
+                            <h3>Verified Payment Gateway & UPI Transactions</h3>
+                            <span class="tag">Destination: yuvrajsoni95555-1@okaxis</span>
+                        </div>
+                        <div class="table-responsive">
+                            <table class="data-table" id="paymentsTable">
+                                <thead>
+                                    <tr>
+                                        <th>Transaction ID</th>
+                                        <th>User UID</th>
+                                        <th>Amount</th>
+                                        <th>Channel</th>
+                                        <th>Date</th>
+                                        <th>Status</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <!-- Populated via JS -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- TAB 5: CONTENT & FOODS -->
+                <section id="tab-content" class="tab-pane">
+                    <div class="card">
+                        <div class="card-header">
+                            <h3>Curated Food & Exercise Catalog</h3>
+                        </div>
+                        <div class="table-responsive">
+                            <table class="data-table" id="foodsTable">
+                                <thead>
+                                    <tr>
+                                        <th>Item Name</th>
+                                        <th>Category</th>
+                                        <th>Dietary Type</th>
+                                        <th>Serving</th>
+                                        <th>Per 100g (Cal/P/C/F)</th>
+                                        <th>Data Provenance</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <!-- Populated via JS -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- TAB 6: AUDIT LOGS -->
+                <section id="tab-audit" class="tab-pane">
+                    <div class="card">
+                        <div class="card-header">
+                            <h3>Administrative Security Audit Trail</h3>
+                            <button class="btn-secondary" id="btnExportAudit">Export Audit CSV</button>
+                        </div>
+                        <div class="table-responsive">
+                            <table class="data-table" id="auditTable">
+                                <thead>
+                                    <tr>
+                                        <th>Timestamp</th>
+                                        <th>Admin / Actor</th>
+                                        <th>Action</th>
+                                        <th>Target</th>
+                                        <th>Details</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <!-- Populated via JS -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
+
+    <!-- Notification Toast Container -->
+    <div id="toastContainer" class="toast-container"></div>
+
+    <script src="admin.js"></script>
+</body>
+</html>

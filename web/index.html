@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>MANI FIT — Your Health. Your Goals. Your Better You.</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="device-frame">
+        <div class="mobile-container">
+            <!-- App Bar -->
+            <header class="app-header">
+                <div class="header-content">
+                    <div class="brand-badge">
+                        <div class="brand-icon">M</div>
+                        <div>
+                            <h1>MANI FIT</h1>
+                            <span class="tagline">Your Health. Your Goals. Your Better You.</span>
+                        </div>
+                    </div>
+                    <div class="header-actions">
+                        <button class="icon-btn" id="btnOpenVip" title="VIP Status">⭐</button>
+                        <button class="icon-btn" id="btnOpenOrganizer" title="Organizer">📅</button>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Screen Viewport -->
+            <main class="screen-viewport">
+                <!-- SCREEN 1: DASHBOARD -->
+                <section id="screen-dashboard" class="screen-view active">
+                    <div class="welcome-banner">
+                        <div>
+                            <h2>Hello, Athlete! 👋</h2>
+                            <p>Daily biometric & energy balance summary</p>
+                        </div>
+                        <div class="vip-status-pill" id="vipPill">FREE PLAN</div>
+                    </div>
+
+                    <!-- Hero Energy Budget Card -->
+                    <div class="hero-energy-card">
+                        <div class="energy-header">
+                            <div>
+                                <span class="card-caption">DAILY CALORIE BUDGET</span>
+                                <h3 id="heroCalRemaining">570 kcal</h3>
+                                <p id="heroCalSubtitle">remaining of 1950 target</p>
+                            </div>
+                            <div class="energy-circle">
+                                <svg viewBox="0 0 36 36" class="circular-chart">
+                                    <path class="circle-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                                    <path class="circle" id="circleProgress" stroke-dasharray="71, 100" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                                    <text x="18" y="20.35" class="percentage" id="circlePercentage">71%</text>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="macro-row">
+                            <div class="macro-col">
+                                <span class="m-label">Protein</span>
+                                <strong id="dashProtein">118g / 140g</strong>
+                                <div class="progress-bar"><div class="fill" style="width: 84%"></div></div>
+                            </div>
+                            <div class="macro-col">
+                                <span class="m-label">Carbs</span>
+                                <strong id="dashCarbs">145g / 210g</strong>
+                                <div class="progress-bar"><div class="fill rose" style="width: 69%"></div></div>
+                            </div>
+                            <div class="macro-col">
+                                <span class="m-label">Fats</span>
+                                <strong id="dashFats">38g / 52g</strong>
+                                <div class="progress-bar"><div class="fill pink" style="width: 73%"></div></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Quick Navigation Actions -->
+                    <div class="quick-grid">
+                        <div class="action-card" id="actDiet">
+                            <div class="icon-circle">🥗</div>
+                            <div>
+                                <h4>Diet Chart</h4>
+                                <span>Create & edit meals</span>
+                            </div>
+                        </div>
+                        <div class="action-card" id="actCoach">
+                            <div class="icon-circle coach">🧠</div>
+                            <div>
+                                <h4>AI Coach</h4>
+                                <span>Ask fitness advice</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Hydration Tracker -->
+                    <div class="card hydration-card">
+                        <div class="card-title-row">
+                            <div class="flex-align">
+                                <span class="icon-teal">💧</span>
+                                <h4>Daily Hydration</h4>
+                            </div>
+                            <span class="metric-teal" id="waterStats">1750 / 2500 ml</span>
+                        </div>
+                        <div class="progress-bar lg">
+                            <div class="fill teal" id="waterBar" style="width: 70%"></div>
+                        </div>
+                        <div class="water-actions">
+                            <button class="btn-water" onclick="addWater(250)">+250 ml</button>
+                            <button class="btn-water" onclick="addWater(500)">+500 ml</button>
+                            <button class="btn-water" onclick="addWater(750)">+750 ml</button>
+                        </div>
+                    </div>
+
+                    <!-- Activity & Steps -->
+                    <div class="card">
+                        <div class="card-title-row">
+                            <div class="flex-align">
+                                <span class="icon-burgundy">🏃</span>
+                                <h4>Activity & Sensor Sync</h4>
+                            </div>
+                            <span class="badge-mini">Health Connect</span>
+                        </div>
+                        <div class="tri-metric-row">
+                            <div class="metric-box">
+                                <strong>7,420</strong>
+                                <span>Steps</span>
+                                <small>Goal: 10,000</small>
+                            </div>
+                            <div class="metric-box">
+                                <strong>380</strong>
+                                <span>Active Cal</span>
+                                <small>Burned</small>
+                            </div>
+                            <div class="metric-box">
+                                <strong>7h 20m</strong>
+                                <span>Sleep</span>
+                                <small>Quality: 88%</small>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- SCREEN 2: DIET CHART MAKER -->
+                <section id="screen-diet" class="screen-view">
+                    <div class="screen-header">
+                        <h2>Diet Chart Maker</h2>
+                        <div class="screen-header-actions">
+                            <button class="btn-icon-top" id="btnGroceryList" title="Grocery List">🛒</button>
+                            <button class="btn-icon-top" id="btnExportDiet" title="Export Plan">📄</button>
+                        </div>
+                    </div>
+
+                    <!-- Calories & Pattern Filters -->
+                    <div class="card">
+                        <div class="slider-header">
+                            <span>Daily Calorie Target</span>
+                            <strong id="dietCalDisplay">1950 kcal</strong>
+                        </div>
+                        <input type="range" id="dietCalSlider" min="1200" max="3500" step="50" value="1950">
+
+                        <div class="chip-label">Dietary Preference</div>
+                        <div class="chip-group" id="dietaryChips">
+                            <button class="chip active" data-type="vegetarian">Vegetarian</button>
+                            <button class="chip" data-type="vegan">Vegan</button>
+                            <button class="chip" data-type="eggetarian">Eggetarian</button>
+                            <button class="chip" data-type="nonVegetarian">Non-Veg</button>
+                            <button class="chip" data-type="jain">Jain</button>
+                        </div>
+                    </div>
+
+                    <!-- Live Calculated Nutrients Banner -->
+                    <div class="calculated-banner">
+                        <div><strong id="totCal">1940</strong><span>Calories</span></div>
+                        <div><strong id="totProt">124g</strong><span>Protein</span></div>
+                        <div><strong id="totCarb">218g</strong><span>Carbs</span></div>
+                        <div><strong id="totFat">48g</strong><span>Fats</span></div>
+                    </div>
+
+                    <!-- Meal Schedule Container -->
+                    <div id="mealListContainer" class="meal-list-container">
+                        <!-- Rendered dynamically via JS -->
+                    </div>
+
+                    <div class="disclaimer-box">
+                        <small>⚠️ <strong>Clinical Notice:</strong> Diet charts provide educational nutritional estimates. They are not intended as clinical treatment for diabetes, renal illness, or metabolic disorders.</small>
+                    </div>
+                </section>
+
+                <!-- SCREEN 3: WORKOUTS -->
+                <section id="screen-workouts" class="screen-view">
+                    <div class="screen-header">
+                        <h2>Workouts & Training</h2>
+                    </div>
+
+                    <!-- Active Workout Widget (if running) -->
+                    <div id="activeWorkoutWidget" class="active-workout-banner" style="display:none;">
+                        <div>
+                            <span class="sub">ROUTINE RUNNING</span>
+                            <h4 id="runningRoutineName">Home Foundation</h4>
+                            <div class="timer-display" id="runningTimerDisplay">00:00</div>
+                        </div>
+                        <button class="btn-finish" id="btnFinishRoutine">Finish & Save</button>
+                    </div>
+
+                    <!-- Level Selector -->
+                    <div class="chip-group" id="workoutLevelChips">
+                        <button class="chip active" data-level="beginner">Beginner</button>
+                        <button class="chip" data-level="intermediate">Intermediate</button>
+                        <button class="chip" data-level="advanced">Advanced</button>
+                    </div>
+
+                    <div id="routinesList" class="routines-list">
+                        <!-- Populated via JS -->
+                    </div>
+                </section>
+
+                <!-- SCREEN 4: AI COACH -->
+                <section id="screen-coach" class="screen-view">
+                    <div class="screen-header">
+                        <h2>AI Fitness Coach</h2>
+                        <span class="badge-mini">Gemini Evidence-Based</span>
+                    </div>
+
+                    <div class="safety-ribbon">
+                        Educational fitness advice only. Does not replace physician diagnosis.
+                    </div>
+
+                    <div class="chat-viewport" id="chatViewport">
+                        <div class="chat-msg coach">
+                            <p>Hello! I am your MANI FIT Health Coach. I have context on your 1,950 kcal daily target and fitness goals. Ask me anything about nutrition timing, protein optimization, or workout form!</p>
+                            <small>⚠️ Not medical advice</small>
+                        </div>
+                    </div>
+
+                    <!-- Quick Suggestions -->
+                    <div class="quick-prompts">
+                        <button class="prompt-chip" onclick="sendPrompt('How do I hit my protein target?')">Protein Tips</button>
+                        <button class="prompt-chip" onclick="sendPrompt('What should I eat pre-workout?')">Pre-Workout</button>
+                        <button class="prompt-chip" onclick="sendPrompt('How to avoid muscle loss during calorie deficit?')">Safe Deficit</button>
+                    </div>
+
+                    <!-- Chat Input -->
+                    <div class="chat-input-bar">
+                        <input type="text" id="chatInput" placeholder="Ask your coach anything...">
+                        <button class="btn-send" id="btnSendChat">Send</button>
+                    </div>
+                </section>
+
+                <!-- SCREEN 5: PROFILE & METABOLIC HEALTH -->
+                <section id="screen-profile" class="screen-view">
+                    <div class="screen-header">
+                        <h2>Metabolic Profile</h2>
+                    </div>
+
+                    <!-- User Header -->
+                    <div class="profile-card">
+                        <div class="profile-avatar">YS</div>
+                        <div>
+                            <h3>Yuvraj Soni</h3>
+                            <p>MANI FIT Athlete • Cloud Synced</p>
+                            <span class="badge-mini success">Mifflin-St Jeor Verified</span>
+                        </div>
+                    </div>
+
+                    <!-- Live Calculated Metrics Card -->
+                    <div class="metabolic-card">
+                        <span class="caption">DETERMINISTIC METABOLIC CALCULATION</span>
+                        <div class="metrics-tri">
+                            <div>
+                                <small>BMI</small>
+                                <strong id="profBmi">23.5</strong>
+                                <span id="profBmiCat">Normal Weight</span>
+                            </div>
+                            <div>
+                                <small>BMR</small>
+                                <strong id="profBmr">1685 kcal</strong>
+                                <span>Basal Rate</span>
+                            </div>
+                            <div>
+                                <small>TDEE</small>
+                                <strong id="profTdee">2440 kcal</strong>
+                                <span>Expenditure</span>
+                            </div>
+                        </div>
+                        <div class="target-summary">
+                            <div>
+                                <small>Target Intake</small>
+                                <strong id="profTargetCal">1940 kcal</strong>
+                            </div>
+                            <div>
+                                <small>Macro Split</small>
+                                <span id="profMacros">P: 144g | C: 218g | F: 54g</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Biometric Adjusters -->
+                    <div class="card">
+                        <h4>Adjust Your Biometrics</h4>
+                        <div class="slider-group">
+                            <div class="slider-header">
+                                <span>Weight</span>
+                                <strong id="lblWeight">72.0 kg</strong>
+                            </div>
+                            <input type="range" id="slWeight" min="40" max="150" step="0.5" value="72">
+                        </div>
+                        <div class="slider-group">
+                            <div class="slider-header">
+                                <span>Height</span>
+                                <strong id="lblHeight">175 cm</strong>
+                            </div>
+                            <input type="range" id="slHeight" min="130" max="210" step="1" value="175">
+                        </div>
+                        <div class="slider-group">
+                            <div class="slider-header">
+                                <span>Age</span>
+                                <strong id="lblAge">26 yrs</strong>
+                            </div>
+                            <input type="range" id="slAge" min="18" max="80" step="1" value="26">
+                        </div>
+                    </div>
+                </section>
+            </main>
+
+            <!-- Bottom Navigation Bar -->
+            <nav class="bottom-nav">
+                <button class="nav-tab active" data-screen="dashboard">
+                    <span class="icon">🏠</span>
+                    <span>Home</span>
+                </button>
+                <button class="nav-tab" data-screen="diet">
+                    <span class="icon">🥗</span>
+                    <span>Diet Plan</span>
+                </button>
+                <button class="nav-tab" data-screen="workouts">
+                    <span class="icon">🏋️</span>
+                    <span>Workouts</span>
+                </button>
+                <button class="nav-tab" data-screen="coach">
+                    <span class="icon">🧠</span>
+                    <span>AI Coach</span>
+                </button>
+                <button class="nav-tab" data-screen="profile">
+                    <span class="icon">👤</span>
+                    <span>Profile</span>
+                </button>
+            </nav>
+        </div>
+    </div>
+
+    <!-- VIP / Subscription Modal -->
+    <div id="vipModal" class="modal-overlay">
+        <div class="modal-card">
+            <div class="modal-header">
+                <h3>MANI FIT Premium</h3>
+                <button class="btn-close-modal" id="btnCloseVip">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="vip-highlight-box">
+                    <strong>₹100 / month</strong>
+                    <p>Unlock custom meal plans, AI coaching, recovery analysis, and exportable PDF reports.</p>
+                </div>
+                <div class="code-box">
+                    <label>Have an Unlock Code?</label>
+                    <div class="code-input-row">
+                        <input type="text" id="modalCodeInput" placeholder="e.g. MANIFIT-VIP-2026">
+                        <button class="btn-redeem" id="btnRedeemModal">Redeem</button>
+                    </div>
+                    <small>Try promo codes: <code>MANIFIT-VIP-2026</code> or <code>MANIFIT-LIFETIME</code></small>
+                </div>
+                <div class="payment-policy-box">
+                    <small>Payment destination reference: <code>yuvrajsoni95555-1@okaxis</code>. Handled via secure verified gateway transactions.</small>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Grocery List Modal -->
+    <div id="groceryModal" class="modal-overlay">
+        <div class="modal-card">
+            <div class="modal-header">
+                <h3>Consolidated Grocery List</h3>
+                <button class="btn-close-modal" id="btnCloseGrocery">&times;</button>
+            </div>
+            <div class="modal-body">
+                <ul id="groceryItemsList" class="grocery-list"></ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Notification -->
+    <div id="appToast" class="app-toast"></div>
+
+    <script src="js/app.js"></script>
+</body>
+</html>

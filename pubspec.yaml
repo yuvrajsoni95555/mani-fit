@@ -1,0 +1,63 @@
+name: mani_fit
+description: "MANI FIT — Your Health. Your Goals. Your Better You. Complete fitness, nutrition, and wellness management application."
+publish_to: "none"
+version: 1.0.0+1
+
+environment:
+  sdk: ">=3.0.0 <4.0.0"
+  flutter: ">=3.10.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  # State Management & Dependency Injection
+  flutter_riverpod: ^2.5.1
+  riverpod_annotation: ^2.3.5
+
+  # Declarative Navigation & Routing
+  go_router: ^14.0.0
+
+  # Typography & Design System
+  google_fonts: ^6.1.0
+  intl: ^0.19.0
+  flutter_svg: ^2.0.10+1
+
+  # Local Persistence & Offline Caching
+  shared_preferences: ^2.2.3
+  hive: ^2.2.3
+  hive_flutter: ^1.1.0
+
+  # Firebase Suite
+  firebase_core: ^2.30.0
+  firebase_auth: ^4.19.0
+  cloud_firestore: ^4.17.0
+  cloud_functions: ^4.7.0
+
+  # Networking & REST API
+  http: ^1.2.1
+
+  # Charts & Visualizations
+  fl_chart: ^0.68.0
+
+  # PDF Report Generation & Sharing
+  pdf: ^3.10.8
+  printing: ^5.13.1
+  share_plus: ^9.0.0
+
+  # Utilities & Device
+  uuid: ^4.4.0
+  crypto: ^3.0.3
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^3.0.0
+  test: ^1.25.0
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/images/
+    - assets/icons/
+    - assets/data/
