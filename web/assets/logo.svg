@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="100%" height="100%">
+  <defs>
+    <linearGradient id="maniBurgundyGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#8B1E3F" />
+      <stop offset="100%" stop-color="#5A1226" />
+    </linearGradient>
+  </defs>
+  <!-- Background rounded squircle (optional/icon mode) -->
+  <rect width="200" height="200" rx="44" fill="url(#maniBurgundyGrad)" />
+  <!-- Bold Geometric 'M' Glyph matching MANI FIT Brand Kit -->
+  <path d="M 42 152 L 42 48 L 74 48 L 100 102 L 126 48 L 158 48 L 158 152 L 132 152 L 132 84 L 111 126 L 89 126 L 68 84 L 68 152 Z" fill="#D4A5A8" />
+</svg>

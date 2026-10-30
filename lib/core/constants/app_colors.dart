@@ -1,32 +1,38 @@
 import 'package:flutter/material.dart';
 
-/// MANI FIT Official Brand Colors & Semantic Design System
+/// MANI FIT Official Brand Colours & Semantic Design System
+/// Sourced directly from official MANI FIT Brand Kit PDF
 class AppColors {
   AppColors._();
 
-  // Core Brand Palette
-  static const Color primaryBurgundy = Color(0xFF881E3F);
-  static const Color deepBurgundy = Color(0xFF4A1226);
-  static const Color roseChampagne = Color(0xFFD4A5A8);
-  static const Color creamWhite = Color(0xFFF8F6F4);
-  static const Color charcoal = Color(0xFF1A1A1A);
-  static const Color slateGrey = Color(0xFF667280);
-  static const Color lightPink = Color(0xFFF2D7DC);
-  static const Color successTeal = Color(0xFF108B81);
+  // Core Brand Palette (Exact Brand Kit Hex)
+  static const Color burgundyRed = Color(0xFF8B1E3F); // Primary
+  static const Color darkBurgundy = Color(0xFF5A1226); // Headers, navigation, accents
+  static const Color roseGold = Color(0xFFD4A5A8); // Icons, accents, highlights
+  static const Color creamWhite = Color(0xFFF8F6F4); // Backgrounds, cards, surfaces
+  static const Color charcoal = Color(0xFF1A1A1A); // Text, icons, strong contrast
+  static const Color slateGray = Color(0xFF6B7280); // Secondary text, borders
+  static const Color lightPink = Color(0xFFF2D7DC); // Badges, subtle elements
+  static const Color successGreen = Color(0xFF10B981); // Positive states, progress
 
-  // Additional Functional Accents
-  static const Color warningAmber = Color(0xFFE28B1B);
-  static const Color errorCrimson = Color(0xFFC02A38);
-  static const Color cardSurfaceLight = Color(0xFFFFFFFF);
-  static const Color cardSurfaceDark = Color(0xFF242424);
+  // Semantic Aliases
+  static const Color primary = burgundyRed;
+  static const Color background = creamWhite;
+  static const Color surface = Colors.white;
+  static const Color darkBackground = darkBurgundy;
+  static const Color darkSurface = Color(0xFF4A1020);
   static const Color borderLight = Color(0xFFE5DEE0);
-  static const Color borderDark = Color(0xFF333333);
-  static const Color backgroundLight = Color(0xFFF8F6F4);
-  static const Color backgroundDark = Color(0xFF141414);
+  static const Color borderDark = Color(0xFF3A0D19);
 
   // Gradients
   static const LinearGradient burgundyGradient = LinearGradient(
-    colors: [primaryBurgundy, deepBurgundy],
+    colors: [burgundyRed, darkBurgundy],
+    begin: Alignment.topLeft,
+    end: Alignment.bottomRight,
+  );
+
+  static const LinearGradient darkCardGradient = LinearGradient(
+    colors: [Color(0xFF4A1020), darkBurgundy],
     begin: Alignment.topLeft,
     end: Alignment.bottomRight,
   );

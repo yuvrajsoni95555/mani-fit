@@ -1,12 +1,12 @@
 :root {
-    --primary-burgundy: #881E3F;
-    --deep-burgundy: #4A1226;
-    --rose-champagne: #D4A5A8;
+    --burgundy-red: #8B1E3F;
+    --dark-burgundy: #5A1226;
+    --rose-gold: #D4A5A8;
     --cream-white: #F8F6F4;
     --charcoal: #1A1A1A;
-    --slate-grey: #667280;
+    --slate-gray: #6B7280;
     --light-pink: #F2D7DC;
-    --success-teal: #108B81;
+    --success-green: #10B981;
     --border-color: #E2DADB;
     --card-bg: #FFFFFF;
     --font-heading: 'Montserrat', sans-serif;
@@ -35,7 +35,7 @@ body {
 /* Sidebar */
 .sidebar {
     width: 260px;
-    background-color: var(--deep-burgundy);
+    background-color: var(--dark-burgundy);
     color: white;
     display: flex;
     flex-direction: column;
@@ -55,29 +55,31 @@ body {
 .brand-emblem {
     width: 42px;
     height: 42px;
-    background: var(--primary-burgundy);
+    background: var(--burgundy-red);
     border-radius: 10px;
     display: flex;
     align-items: center;
     justify-content: center;
     font-family: var(--font-heading);
-    font-weight: 700;
+    font-weight: 800;
     font-size: 18px;
-    color: white;
-    border: 1px solid var(--rose-champagne);
+    color: var(--rose-gold);
+    border: 1px solid var(--rose-gold);
 }
 
 .brand-text h2 {
     font-family: var(--font-heading);
     font-size: 18px;
-    letter-spacing: -0.3px;
+    letter-spacing: 0.5px;
+    font-weight: 700;
 }
 
 .brand-text span {
-    font-size: 11px;
-    color: var(--rose-champagne);
+    font-size: 10px;
+    color: var(--rose-gold);
     text-transform: uppercase;
     letter-spacing: 0.5px;
+    font-weight: 600;
 }
 
 .nav-menu {
@@ -96,7 +98,7 @@ body {
     border: none;
     color: rgba(255, 255, 255, 0.8);
     font-family: var(--font-body);
-    font-size: 14px;
+    font-size: 13.5px;
     font-weight: 500;
     border-radius: 10px;
     cursor: pointer;
@@ -110,7 +112,7 @@ body {
 }
 
 .nav-item.active {
-    background: var(--primary-burgundy);
+    background: var(--burgundy-red);
     color: white;
     font-weight: 600;
 }
@@ -132,8 +134,8 @@ body {
 .admin-profile .avatar {
     width: 36px;
     height: 36px;
-    background: var(--rose-champagne);
-    color: var(--deep-burgundy);
+    background: var(--rose-gold);
+    color: var(--dark-burgundy);
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -149,7 +151,7 @@ body {
 
 .admin-profile .info span {
     font-size: 11px;
-    color: var(--rose-champagne);
+    color: var(--rose-gold);
 }
 
 .btn-logout {
@@ -187,11 +189,12 @@ body {
 .topbar h1 {
     font-family: var(--font-heading);
     font-size: 22px;
+    font-weight: 700;
 }
 
 .topbar .subtitle {
     font-size: 13px;
-    color: var(--slate-grey);
+    color: var(--slate-gray);
 }
 
 .topbar-right {
@@ -207,12 +210,12 @@ body {
 
 /* Buttons */
 .btn-primary {
-    background: var(--primary-burgundy);
+    background: var(--burgundy-red);
     color: white;
     border: none;
     padding: 10px 18px;
     border-radius: 10px;
-    font-family: var(--font-heading);
+    font-family: var(--font-body);
     font-size: 13px;
     font-weight: 600;
     cursor: pointer;
@@ -220,13 +223,13 @@ body {
 }
 
 .btn-primary:hover {
-    background: var(--deep-burgundy);
+    background: var(--dark-burgundy);
 }
 
 .btn-secondary {
     background: white;
-    color: var(--primary-burgundy);
-    border: 1px solid var(--primary-burgundy);
+    color: var(--burgundy-red);
+    border: 1px solid var(--burgundy-red);
     padding: 8px 14px;
     border-radius: 8px;
     font-size: 12px;
@@ -262,9 +265,9 @@ body {
 }
 
 .metric-card .label {
-    font-size: 12px;
+    font-size: 11.5px;
     font-weight: 600;
-    color: var(--slate-grey);
+    color: var(--slate-gray);
     text-transform: uppercase;
     letter-spacing: 0.5px;
 }
@@ -272,8 +275,8 @@ body {
 .metric-card .value {
     font-family: var(--font-heading);
     font-size: 28px;
-    font-weight: 700;
-    color: var(--primary-burgundy);
+    font-weight: 800;
+    color: var(--burgundy-red);
     margin: 6px 0;
 }
 
@@ -282,8 +285,8 @@ body {
     font-weight: 500;
 }
 
-.delta.positive { color: var(--success-teal); }
-.delta.neutral { color: var(--slate-grey); }
+.delta.positive { color: var(--success-green); }
+.delta.neutral { color: var(--slate-gray); }
 
 /* Cards & Tables */
 .card {
@@ -305,6 +308,7 @@ body {
 .card-header h3 {
     font-family: var(--font-heading);
     font-size: 17px;
+    font-weight: 700;
 }
 
 .search-input {
@@ -329,7 +333,7 @@ body {
 .data-table th {
     padding: 12px 14px;
     background: var(--cream-white);
-    color: var(--slate-grey);
+    color: var(--slate-gray);
     font-weight: 600;
     border-bottom: 1px solid var(--border-color);
 }
@@ -355,14 +359,14 @@ body {
     gap: 6px;
 }
 
-.badge-success { background: #E1F4F1; color: var(--success-teal); }
+.badge-success { background: #E1F4F1; color: var(--success-green); }
 .badge-info { background: #EBF3FF; color: #1E60D4; }
 .badge-warning { background: #FFF4E5; color: #B25E09; }
 .badge-danger { background: #FDE8E9; color: #C02A38; }
 
 .status-live {
     background: #E1F4F1;
-    color: var(--success-teal);
+    color: var(--success-green);
     font-weight: 600;
 }
 
@@ -370,15 +374,15 @@ body {
     width: 8px;
     height: 8px;
     border-radius: 50%;
-    background: var(--success-teal);
-    box-shadow: 0 0 0 0 rgba(16, 139, 129, 0.7);
+    background: var(--success-green);
+    box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7);
     animation: pulsing 1.6s infinite;
 }
 
 @keyframes pulsing {
-    0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 139, 129, 0.7); }
-    70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(16, 139, 129, 0); }
-    100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 139, 129, 0); }
+    0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+    70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(16, 185, 129, 0); }
+    100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
 }
 
 /* Forms */
@@ -413,7 +417,7 @@ body {
 }
 
 .form-group input:focus, .form-group select:focus {
-    border-color: var(--primary-burgundy);
+    border-color: var(--burgundy-red);
 }
 
 .form-actions {
@@ -446,7 +450,7 @@ body {
 
 .health-info span {
     font-size: 12px;
-    color: var(--slate-grey);
+    color: var(--slate-gray);
 }
 
 /* Tabs */
@@ -470,13 +474,13 @@ body {
 }
 
 .toast {
-    background: var(--deep-burgundy);
+    background: var(--dark-burgundy);
     color: white;
     padding: 12px 18px;
     border-radius: 10px;
     font-size: 13px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-    border-left: 4px solid var(--rose-champagne);
+    border-left: 4px solid var(--rose-gold);
     animation: slideIn 0.3s ease;
 }
 

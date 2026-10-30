@@ -3,6 +3,7 @@ import '../constants/app_colors.dart';
 import '../constants/app_typography.dart';
 
 /// MANI FIT Material 3 Application Theme Definition
+/// Aligned strictly with Brand Kit Page 3 UI Elements & Themes
 class AppTheme {
   AppTheme._();
 
@@ -10,29 +11,29 @@ class AppTheme {
     return ThemeData(
       useMaterial3: true,
       brightness: Brightness.light,
-      primaryColor: AppColors.primaryBurgundy,
+      primaryColor: AppColors.burgundyRed,
       scaffoldBackgroundColor: AppColors.creamWhite,
       colorScheme: const ColorScheme.light(
-        primary: AppColors.primaryBurgundy,
+        primary: AppColors.burgundyRed,
         onPrimary: Colors.white,
-        secondary: AppColors.roseChampagne,
+        secondary: AppColors.roseGold,
         onSecondary: AppColors.charcoal,
-        surface: AppColors.cardSurfaceLight,
+        surface: AppColors.surface,
         onSurface: AppColors.charcoal,
-        error: AppColors.errorCrimson,
+        error: Color(0xFFC02A38),
         onError: Colors.white,
       ),
       appBarTheme: AppBarTheme(
-        backgroundColor: AppColors.deepBurgundy,
+        backgroundColor: AppColors.darkBurgundy,
         foregroundColor: Colors.white,
         elevation: 0,
         centerTitle: true,
         titleTextStyle: AppTypography.headingLarge(color: Colors.white),
       ),
       cardTheme: CardTheme(
-        color: AppColors.cardSurfaceLight,
+        color: AppColors.surface,
         elevation: 2,
-        shadowColor: AppColors.charcoal.withOpacity(0.08),
+        shadowColor: AppColors.charcoal.withOpacity(0.06),
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(16),
           side: const BorderSide(color: AppColors.borderLight, width: 1),
@@ -40,7 +41,7 @@ class AppTheme {
       ),
       elevatedButtonTheme: ElevatedButtonThemeData(
         style: ElevatedButton.styleFrom(
-          backgroundColor: AppColors.primaryBurgundy,
+          backgroundColor: AppColors.burgundyRed,
           foregroundColor: Colors.white,
           minimumSize: const Size.fromHeight(50),
           shape: RoundedRectangleBorder(
@@ -52,13 +53,13 @@ class AppTheme {
       ),
       outlinedButtonTheme: OutlinedButtonThemeData(
         style: OutlinedButton.styleFrom(
-          foregroundColor: AppColors.primaryBurgundy,
+          foregroundColor: AppColors.burgundyRed,
           minimumSize: const Size.fromHeight(50),
-          side: const BorderSide(color: AppColors.primaryBurgundy, width: 1.5),
+          side: const BorderSide(color: AppColors.burgundyRed, width: 1.5),
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(12),
           ),
-          textStyle: AppTypography.buttonText(color: AppColors.primaryBurgundy),
+          textStyle: AppTypography.buttonText(color: AppColors.burgundyRed),
         ),
       ),
       inputDecorationTheme: InputDecorationTheme(
@@ -75,18 +76,14 @@ class AppTheme {
         ),
         focusedBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(12),
-          borderSide: const BorderSide(color: AppColors.primaryBurgundy, width: 2),
+          borderSide: const BorderSide(color: AppColors.burgundyRed, width: 2),
         ),
-        errorBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(12),
-          borderSide: const BorderSide(color: AppColors.errorCrimson),
-        ),
-        labelStyle: AppTypography.bodyMedium(color: AppColors.slateGrey),
+        labelStyle: AppTypography.bodyMedium(color: AppColors.slateGray),
       ),
       bottomNavigationBarTheme: const BottomNavigationBarThemeData(
         backgroundColor: Colors.white,
-        selectedItemColor: AppColors.primaryBurgundy,
-        unselectedItemColor: AppColors.slateGrey,
+        selectedItemColor: AppColors.burgundyRed,
+        unselectedItemColor: AppColors.slateGray,
         type: BottomNavigationBarType.fixed,
         elevation: 8,
       ),
@@ -97,27 +94,27 @@ class AppTheme {
     return ThemeData(
       useMaterial3: true,
       brightness: Brightness.dark,
-      primaryColor: AppColors.roseChampagne,
-      scaffoldBackgroundColor: AppColors.backgroundDark,
+      primaryColor: AppColors.roseGold,
+      scaffoldBackgroundColor: AppColors.darkBackground,
       colorScheme: const ColorScheme.dark(
-        primary: AppColors.roseChampagne,
+        primary: AppColors.roseGold,
         onPrimary: AppColors.charcoal,
-        secondary: AppColors.primaryBurgundy,
+        secondary: AppColors.burgundyRed,
         onSecondary: Colors.white,
-        surface: AppColors.cardSurfaceDark,
+        surface: AppColors.darkSurface,
         onSurface: Colors.white,
-        error: AppColors.errorCrimson,
+        error: Color(0xFFC02A38),
         onError: Colors.white,
       ),
       appBarTheme: AppBarTheme(
-        backgroundColor: AppColors.charcoal,
+        backgroundColor: AppColors.darkBurgundy,
         foregroundColor: Colors.white,
         elevation: 0,
         centerTitle: true,
         titleTextStyle: AppTypography.headingLarge(color: Colors.white),
       ),
       cardTheme: CardTheme(
-        color: AppColors.cardSurfaceDark,
+        color: AppColors.darkSurface,
         elevation: 2,
         shadowColor: Colors.black.withOpacity(0.3),
         shape: RoundedRectangleBorder(
@@ -127,7 +124,7 @@ class AppTheme {
       ),
       elevatedButtonTheme: ElevatedButtonThemeData(
         style: ElevatedButton.styleFrom(
-          backgroundColor: AppColors.primaryBurgundy,
+          backgroundColor: AppColors.burgundyRed,
           foregroundColor: Colors.white,
           minimumSize: const Size.fromHeight(50),
           shape: RoundedRectangleBorder(
@@ -138,19 +135,19 @@ class AppTheme {
       ),
       outlinedButtonTheme: OutlinedButtonThemeData(
         style: OutlinedButton.styleFrom(
-          foregroundColor: AppColors.roseChampagne,
+          foregroundColor: AppColors.roseGold,
           minimumSize: const Size.fromHeight(50),
-          side: const BorderSide(color: AppColors.roseChampagne, width: 1.5),
+          side: const BorderSide(color: AppColors.roseGold, width: 1.5),
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(12),
           ),
-          textStyle: AppTypography.buttonText(color: AppColors.roseChampagne),
+          textStyle: AppTypography.buttonText(color: AppColors.roseGold),
         ),
       ),
       bottomNavigationBarTheme: const BottomNavigationBarThemeData(
-        backgroundColor: AppColors.charcoal,
-        selectedItemColor: AppColors.roseChampagne,
-        unselectedItemColor: AppColors.slateGrey,
+        backgroundColor: AppColors.darkBurgundy,
+        selectedItemColor: AppColors.roseGold,
+        unselectedItemColor: AppColors.slateGray,
         type: BottomNavigationBarType.fixed,
         elevation: 8,
       ),
